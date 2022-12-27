@@ -23,6 +23,13 @@ const CalendarAppWrapper = styled.div`
   .rbc-time-view .rbc-header {
     border-bottom: none;
   }
+  .rbc-calendar {
+    border-left: 1px solid #a0a096;
+    padding: 10px;
+  }
+  .react-calendar {
+    border: none;
+  }
 `;
 
 const localizer = momentLocalizer(moment);

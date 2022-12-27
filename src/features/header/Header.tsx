@@ -6,7 +6,8 @@ const HeaderWrapper = styled.div`
   font-size: 25px;
   display: flex;
   align-items: center;
-  padding: 10px;
+  justify-content: center;
+  border-bottom: 1px solid #a0a096;
 `;
 
 const Header = () => {
