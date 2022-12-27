@@ -104,15 +104,15 @@ const SaveButton = styled.button`
 Modal.setAppElement("#root");
 
 function dateFormat(start: Date, end: Date) {
-  const day = ["일", "월", "화", "수", "목", "금", "토"];
+  const day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const newDate =
     start.getMonth() +
     1 +
-    "월 " +
+    "/" +
     start.getDate() +
-    "일 (" +
+    " (" +
     day[start.getDay()] +
-    "요일) " +
+    ") " +
     start.getHours() +
     ":" +
     (start.getMinutes() === 0 ? "00" : start.getMinutes()) +
@@ -135,10 +135,6 @@ const EventModal: FC<Props> = (props: Props) => {
 
   const { isModalOpen, eventTime, onClose, onSaveEvent } = props;
 
-  /**
-   * 선택한 이벤트가 있을 경우 -> 업데이트 및 삭제 가능한 modal
-   * 선택한 이벤트가 없을 경우 -> 이벤트 생성하는 modal
-   */
   const sEvent = useAppSelector(selectedEvent);
 
   const [title, setTitle] = useState<string>("");
@@ -176,7 +172,7 @@ const EventModal: FC<Props> = (props: Props) => {
   };
 
   const notify = () => {
-    toast("일정이 삭제되었습니다.", {
+    toast("The event has been deleted.", {
       position: toast.POSITION.BOTTOM_CENTER,
     });
   };
@@ -219,7 +215,7 @@ const EventModal: FC<Props> = (props: Props) => {
               value={title}
               onChange={handleChange}
               autoFocus
-              placeholder="제목 추가"
+              placeholder="Add title"
             />
           )}
           {sEvent?.start && sEvent?.end ? (
@@ -232,9 +228,9 @@ const EventModal: FC<Props> = (props: Props) => {
           {title !== "" && (
             <ModalFooter>
               {isEditMode ? (
-                <SaveButton onClick={handleEditSave}>수정</SaveButton>
+                <SaveButton onClick={handleEditSave}>Edit</SaveButton>
               ) : (
-                <SaveButton onClick={handleSave}>저장</SaveButton>
+                <SaveButton onClick={handleSave}>Save</SaveButton>
               )}
             </ModalFooter>
           )}

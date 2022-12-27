@@ -29,20 +29,10 @@ export const calendarSlice = createSlice({
       );
       return { ...state, events };
     },
-    /**
-     * 일정 생성 시 임시로 기간 영역을 표시하기 위해 만들었던 일정을 삭제하기 위한 함수
-     * @param state 기존 state
-     * @returns 타이틀이 있는 정상 일정들만 리턴
-     */
     deleteTempEvent: (state) => {
       const events = state.events.filter((e) => e.title);
       return { ...state, events };
     },
-    /**
-     * 선택한 일정을 저장하기 위함
-     * @param state 기존 state
-     * @param action 선택된 일정
-     */
     setSelectedEvent: (state, action: PayloadAction<Event>) => {
       state.selectedEvent = action.payload;
     },

@@ -41,7 +41,7 @@ const CalendarApp: FC<Props> = (props: Props) => {
   const [date, setDate] = useState(new Date());
 
   /**
-   * 일정 생성 시 주간 캘린더에서 기간을 선택 시 불리는 함수
+   * the fuction when select the duration in weekly calendar
    */
   const handleSelectSlot = ({ start, end }: SlotInfo) => {
     dispatch(createEvent({ start, end }));
@@ -49,8 +49,8 @@ const CalendarApp: FC<Props> = (props: Props) => {
   };
 
   /**
-   * 주간 캘린더에서 일정 선택 시 불리는 함수
-   * @param event 선택한 일정
+   * the fuction when select an event in weekly calendar
+   * @param event selected event
    */
   const handleSelectEvent = (event: Event) => {
     dispatch(setSelectedEvent(event));
