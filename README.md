@@ -1,5 +1,7 @@
 # React Calendar
 
+![image](https://user-images.githubusercontent.com/66999574/209680783-893d95be-688d-4922-926e-eaba09fb9054.png)
+
 ## Getting Started
 
 To install npm package:
